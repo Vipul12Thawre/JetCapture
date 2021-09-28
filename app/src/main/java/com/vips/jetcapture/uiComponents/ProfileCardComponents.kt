@@ -98,7 +98,7 @@ fun ProfileCard() {
 
             Spacer(modifier = Modifier.height(20.dp))
             Text(
-                text = "Works on main Tesbook app", style = TextStyle(
+                text = "Works in", style = TextStyle(
                     fontFamily = appFontFamily,
                     fontWeight = FontWeight.Light,
                     fontSize = 12.sp,
@@ -107,7 +107,7 @@ fun ProfileCard() {
             )
 
             Text(
-                text = "@Testbook.com", style = TextStyle(
+                text = "Testbook.com", style = TextStyle(
                     fontFamily = appFontFamily,
                     fontWeight = FontWeight.Light,
                     fontSize = 12.sp,
@@ -147,7 +147,7 @@ fun ProfileCard() {
             Spacer(modifier = Modifier.height(30.dp))
 
             Text(
-                text = "Techie | Fitness freak | UI/UX lover", style = TextStyle(
+                text = "Techie | Fitness freak | UI/UX lover | Blogger", style = TextStyle(
                     fontFamily = appFontFamily,
                     fontWeight = FontWeight.Medium,
                     fontSize = 12.sp,
@@ -163,16 +163,6 @@ fun ProfileCard() {
 @Composable
 fun Preview() {
     ProfileCard()
-    temp()
 }
 
-@Composable
-fun temp(){
-    BottomAppBar(
-        elevation = 10.dp,
-        cutoutShape = RoundedCornerShape(12.dp)
-    ) {
-
-    }
-}
 
