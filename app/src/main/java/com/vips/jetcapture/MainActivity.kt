@@ -56,25 +56,18 @@ class MainActivity : ComponentActivity() {
             color = MaterialTheme.colors.primaryVariant,
             modifier = Modifier.fillMaxSize()
         ) {
-
             Scaffold(
-
                 bottomBar = {
                     BottomAppBar(
                         elevation = 10.dp,
                         cutoutShape = RoundedCornerShape(18.dp),
                         backgroundColor = MaterialTheme.colors.secondary
-                    ) {
-
-                    }
+                    ) {}
                 },
                 floatingActionButton = {
                     ExtendedFloatingActionButton({
-                        Text(text = "Capture ProfileView", color = Color.White)
-                    },
-                        onClick = {
-                            jetCaptureView?.value?.capture(jetCaptureView?.value as ProfileCardView)
-                        },
+                        Text(text = "Capture ProfileView", color = Color.White)},
+                        onClick = { jetCaptureView?.value?.capture(jetCaptureView?.value as ProfileCardView) },
                         shape = RoundedCornerShape(18.dp),
                         icon = {
                             Image(
@@ -87,27 +80,25 @@ class MainActivity : ComponentActivity() {
                 isFloatingActionButtonDocked = true,
                 floatingActionButtonPosition = FabPosition.Center,
                 backgroundColor = MaterialTheme.colors.primaryVariant
-
             ) {
-
-                jetCaptureView = remember { mutableStateOf(ProfileCardView(this@MainActivity)) }
                 Box(modifier = Modifier.fillMaxSize()) {
-                    AndroidView(
-                        modifier = Modifier
-                            .wrapContentSize(),
-                        factory = {
-                            ProfileCardView(
-                                it
-                            ).apply {
-
-                                post {
-                                    jetCaptureView?.value = this
-                                }
-                            }
-                        }
-                    )
+                        ProfileUI()
                 }
             }
         }
+    }
+
+    @Composable
+    private fun ProfileUI() {
+        jetCaptureView = remember { mutableStateOf(ProfileCardView(this@MainActivity)) }
+        AndroidView(modifier = Modifier.wrapContentSize(),
+            factory = {
+                ProfileCardView(it).apply {
+                    post {
+                        jetCaptureView?.value = this
+                    }
+                }
+            }
+        )
     }
 }

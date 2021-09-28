@@ -118,7 +118,6 @@ fun ProfileCard() {
 
             Spacer(modifier = Modifier.height(30.dp))
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center) {
-
                 Image(
                     painter = painterResource(id = R.drawable.twitter),
                     contentDescription = null,
@@ -140,12 +139,8 @@ fun ProfileCard() {
                     modifier = Modifier
                         .size(20.dp)
                 )
-
-
             }
-
             Spacer(modifier = Modifier.height(30.dp))
-
             Text(
                 text = "Techie | Fitness freak | UI/UX lover | Blogger", style = TextStyle(
                     fontFamily = appFontFamily,
@@ -154,7 +149,6 @@ fun ProfileCard() {
                     lineHeight = 20.sp
                 )
             )
-
         }
     }
 }
