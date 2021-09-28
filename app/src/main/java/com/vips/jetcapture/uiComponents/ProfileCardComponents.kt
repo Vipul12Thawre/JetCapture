@@ -150,7 +150,7 @@ fun ProfileCard() {
                 text = "Techie | Fitness freak | UI/UX lover | Blogger", style = TextStyle(
                     fontFamily = appFontFamily,
                     fontWeight = FontWeight.Medium,
-                    fontSize = 12.sp,
+                    fontSize = 10.sp,
                     lineHeight = 20.sp
                 )
             )
